@@ -5,9 +5,9 @@ import com.sharipov.movie_reservation_system.domain.entity.profile.Profile;
 import java.util.List;
 
 public interface ProfileService {
-    List<Profile> getAllUsersByUserName(String username);
-    Profile getUserById(Long id);
+    List<Profile> getAllProfilesByUserName(String username);
+    Profile getProfileById(Long id);
     Profile create(Profile profile);
-    Boolean update(Profile profile);
+    Boolean update(Profile profile, Long id);
     void deleteById(Long id);
 }

@@ -28,8 +28,6 @@ public class MovieController {
 
     }
 
-
-
     @GetMapping("/{id}")
     public ResponseEntity<Movie> getMovieById(@PathVariable("id") Long id) {
         Movie movie = movieService.getMovieById(id);
