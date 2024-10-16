@@ -1,16 +1,15 @@
 package com.sharipov.movie_reservation_system.domain.service;
 
 import com.sharipov.movie_reservation_system.domain.entity.movie.Movie;
-import com.sharipov.movie_reservation_system.domain.entity.profile.Profile;
 
 import java.util.List;
 
 public interface MovieService {
-    List<Movie> getAllMovieById(Long id);
+    List<Movie> getAllMovies();
 
-    Profile getMovieById(Long id);
+    Movie getMovieById(Long id);
 
-    Profile create(Movie movie);
+    Movie create(Movie movie);
 
     Boolean update(Movie movie);
 
