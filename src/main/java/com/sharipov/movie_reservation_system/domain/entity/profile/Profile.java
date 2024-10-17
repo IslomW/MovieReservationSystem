@@ -19,5 +19,5 @@ public class Profile {
     private String password;
     private String confirmationPassword;
     private Role role;
-    private GeneratedStatus status;
+    private GeneralStatus status;
 }

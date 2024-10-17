@@ -2,7 +2,10 @@ package com.sharipov.movie_reservation_system.domain.web.mappers;
 
 import com.sharipov.movie_reservation_system.domain.entity.reservation.Reservation;
 import com.sharipov.movie_reservation_system.domain.web.dto.ReservationDTO;
+import org.springframework.stereotype.Component;
 
+
+@Component
 public class ReservationMapper {
     public Reservation reservationDTOToEntity(ReservationDTO dto) {
         Reservation reservation = new Reservation();

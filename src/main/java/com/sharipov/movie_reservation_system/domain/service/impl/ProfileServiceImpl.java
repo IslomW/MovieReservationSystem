@@ -1,6 +1,9 @@
 package com.sharipov.movie_reservation_system.domain.service.impl;
 
+import com.sharipov.movie_reservation_system.domain.entity.profile.GeneralStatus;
 import com.sharipov.movie_reservation_system.domain.entity.profile.Profile;
+import com.sharipov.movie_reservation_system.domain.entity.profile.Role;
+import com.sharipov.movie_reservation_system.domain.exception.BadAppRequestException;
 import com.sharipov.movie_reservation_system.domain.exception.ResourceNotFoundException;
 import com.sharipov.movie_reservation_system.domain.repository.ProfileRepository;
 import com.sharipov.movie_reservation_system.domain.service.ProfileService;
@@ -31,6 +34,12 @@ public class ProfileServiceImpl implements ProfileService {
 
     @Override
     public Profile create(Profile profile) {
+        if (!profile.getPassword().equals(profile.getConfirmationPassword())){
+            throw new BadAppRequestException("Password and PasswordConfirmation not equals");
+        }
+        profile.setRole(Role.ROLE_USER);
+        profile.setStatus(GeneralStatus.ACTIVE);
+
         return profileRepository.save(profile);
     }
 

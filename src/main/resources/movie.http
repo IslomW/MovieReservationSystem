@@ -1,0 +1,43 @@
+###Get all Movies
+GET localhost:8080/api/v1/movie
+
+###Get Movie By id
+GET localhost:8080/api/v1/movie/1
+
+###Create Movie
+POST localhost:8080/api/v1/movie
+Content-Type: application/json
+
+{
+  "title": "nma gap",
+  "description": "solal"
+}
+
+###Create Movie with Genres
+POST localhost:8080/api/v1/movie
+Content-Type: application/json
+
+  {
+        "title": "nma gap",
+        "description": "solal",
+        "genres": [
+            {
+                "name": "1"
+            }
+        ]
+    }
+
+###Update Movie
+PUT localhost:8080/api/v1/profile/1
+Content-Type: application/json
+
+  {
+        "title": "ozgardi",
+        "description": "ozgardi",
+        "genres": [
+            {
+                "name": "1 ikki"
+            }
+        ]
+    }
+

@@ -21,6 +21,7 @@ public class ProfileController {
 
     private final ProfileService profileService;
 
+    @GetMapping
     public ResponseEntity<List<Profile>> getAllProfiles() {
         List<Profile> profiles = profileService.getAllProfiles();
         return ResponseEntity.ok(profiles);
@@ -32,6 +33,7 @@ public class ProfileController {
         Profile profile = profileService.getProfileById(id);
         return ResponseEntity.ok(profile);
     }
+
 
     @PutMapping("/{id}")
     public ResponseEntity<Boolean> updateProfile(@RequestBody ProfileDTO dto,

@@ -2,7 +2,10 @@ package com.sharipov.movie_reservation_system.domain.web.mappers;
 
 import com.sharipov.movie_reservation_system.domain.entity.showtime.Showtime;
 import com.sharipov.movie_reservation_system.domain.web.dto.ShowtimeDTO;
+import org.springframework.stereotype.Component;
 
+
+@Component
 public class ShowTimeMapper {
     public Showtime showtimeDTOToEntity(ShowtimeDTO dto) {
         Showtime showtime = new Showtime();
