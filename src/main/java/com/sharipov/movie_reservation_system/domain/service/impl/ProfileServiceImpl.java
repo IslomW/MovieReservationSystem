@@ -6,7 +6,6 @@ import com.sharipov.movie_reservation_system.domain.repository.ProfileRepository
 import com.sharipov.movie_reservation_system.domain.service.ProfileService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -18,7 +17,7 @@ public class ProfileServiceImpl implements ProfileService {
     private final ProfileRepository profileRepository;
 
     @Override
-    public List<Profile> getAllProfilesByUserName(String username) {
+    public List<Profile> getAllProfiles() {
         List<Profile> profiles = (List<Profile>) profileRepository.findAll();
         return profiles;
     }
