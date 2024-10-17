@@ -4,21 +4,21 @@ import com.sharipov.movie_reservation_system.domain.entity.profile.Profile;
 import com.sharipov.movie_reservation_system.domain.web.dto.ProfileDTO;
 
 public class ProfileMapper {
-    public Profile profileDTOToEntity(ProfileDTO dto){
+    public Profile profileDTOToEntity(ProfileDTO dto) {
         Profile profile = new Profile();
-        profile.setName();
-        profile.setUsername();
-        profile.setPassword();
+        profile.setName(dto.getName());
+        profile.setUsername(dto.getUsername());
+        profile.setPassword(dto.getPassword());
+        profile.setConfirmationPassword(dto.getConfirmationPassword());
+        return profile;
+    }
 
-
-
-
-
-
-           profile.setConfirmationPassword();
-
-
-
-            return profile;
+    public ProfileDTO profileEntityToDTO(Profile profile) {
+        ProfileDTO dto = new ProfileDTO();
+        dto.setName(profile.getName());
+        dto.setUsername(profile.getUsername());
+        dto.setPassword(profile.getPassword());
+        dto.setConfirmationPassword(profile.getConfirmationPassword());
+        return dto;
     }
 }
