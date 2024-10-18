@@ -14,7 +14,8 @@ import java.util.Map;
 
 public class JwtUtil {
 
-    private static final int tokenLiveTime = 1000 * 3600; // 1 day
+    private static final int tokenLiveTime = 1000 * 3600 * 24; // 1 day
+    private static final long refreshTokenLiveTime = 1000L * 3600 * 24 * 30; // 30 day
     private static final String secretKey = "dfjs23lkjdfalkjflkjsaldkjflk63457sdhjfklhgjkha568756dfasdfasfghdahertjytrikyt567974436sdfjdklsjaflk";
 
     public static String encode(String username, String role) {
@@ -29,6 +30,22 @@ public class JwtUtil {
                 .subject(username)
                 .issuedAt(new Date(System.currentTimeMillis()))
                 .expiration(new Date(System.currentTimeMillis() + tokenLiveTime))
+                .signWith(getSignInKey())
+                .compact();
+    }
+
+    public static String generateRefreshToken(String username, String role) {
+        Map<String, Object> extraClaims = new HashMap<>();
+        extraClaims.put("username", username);
+        extraClaims.put("role", role);
+
+
+        return Jwts
+                .builder()
+                .claims(extraClaims)
+                .subject(username)
+                .issuedAt(new Date(System.currentTimeMillis()))
+                .expiration(new Date(System.currentTimeMillis() + refreshTokenLiveTime))
                 .signWith(getSignInKey())
                 .compact();
     }
