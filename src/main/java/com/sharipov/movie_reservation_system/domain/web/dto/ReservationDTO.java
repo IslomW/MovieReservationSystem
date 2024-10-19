@@ -12,6 +12,9 @@ public class ReservationDTO {
 
     private Status status;
 
+    private Long profileId;
+    private Long showtimeId;
+
     private Showtime showtime;
 
     private Profile profile;

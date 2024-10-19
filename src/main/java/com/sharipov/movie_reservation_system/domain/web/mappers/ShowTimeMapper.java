@@ -13,7 +13,7 @@ public class ShowTimeMapper {
         showtime.setTime(dto.getTime());
         showtime.setCinema_hall(dto.getCinema_hall());
         showtime.setCapacity(dto.getCapacity());
-        showtime.setMovie(dto.getMovie());
+        showtime.setMovieId(dto.getMovie_id());
         return showtime;
     }
 

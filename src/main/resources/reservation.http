@@ -1,0 +1,17 @@
+###Get All Reservations
+GET localhost:8080/api/v1/reservation
+
+
+###Get Reservation By id
+GET localhost:8080/api/v1/reservation/1
+
+
+###Create Reservation
+POST localhost:8080/api/v1/reservation
+Content-Type: application/json
+
+{
+  "seatNumber": "A3",
+  "profileId": 1,
+  "showtimeId": 1
+}

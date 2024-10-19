@@ -12,5 +12,7 @@ public class ShowtimeDTO {
     private String cinema_hall;
     private Integer capacity;
 
+    private Long movie_id;
+
     private Movie movie;
 }

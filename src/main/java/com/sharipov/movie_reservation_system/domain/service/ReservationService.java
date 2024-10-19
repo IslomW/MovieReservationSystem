@@ -1,17 +1,18 @@
 package com.sharipov.movie_reservation_system.domain.service;
 
 import com.sharipov.movie_reservation_system.domain.entity.reservation.Reservation;
+import com.sharipov.movie_reservation_system.domain.web.dto.ReservationDTO;
 
 import java.util.List;
 
 public interface ReservationService {
 
-    List<Reservation> getAllReservations();
+    List<ReservationDTO> getAllReservations();
 
-    Reservation getReservationById(Long id);
+    ReservationDTO getReservationById(Long id);
 
-    Reservation create(Reservation reservation);
+    ReservationDTO create(ReservationDTO reservationDTO);
 
-    Reservation update(Reservation reservation, Long id);
+    ReservationDTO update(ReservationDTO reservationDTO, Long id);
     void deleteReservationById(Long id);
 }

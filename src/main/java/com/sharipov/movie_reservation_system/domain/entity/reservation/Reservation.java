@@ -20,11 +20,15 @@ public class Reservation {
 
     private Status status;
 
+    @Column(name = "showtime_id")
+    private Long showtimeId;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "showtime_id", updatable = false, insertable = false)
     private Showtime showtime;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @Column(name = "profile_id")
+    private Long profileId;
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "profile_id", updatable = false, insertable = false)
     private Profile profile;
 

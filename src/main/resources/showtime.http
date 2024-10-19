@@ -1,0 +1,22 @@
+###Get all Showtimes
+GET localhost:8080/api/v1/showtime
+
+
+
+###Get showtime By Id
+GET localhost:8080/api/v1/showtime/1
+
+
+
+###Create showtime
+POST localhost:8080/api/v1/showtime
+Content-Type: application/json
+
+{
+  "date": "25 oktyabr",
+  "time": "soat 23:00",
+  "cinema_hall": "Guncha B1",
+  "capacity": "30",
+  "movie_id": 1
+}
+

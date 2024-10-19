@@ -1,5 +1,6 @@
 package com.sharipov.movie_reservation_system.domain.entity.showtime;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sharipov.movie_reservation_system.domain.entity.movie.Movie;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -18,7 +19,11 @@ public class Showtime {
     private Integer capacity;
     private LocalDateTime createdAt;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @Column(name = "movie_id")
+    private Long movieId;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "movie_id", updatable = false, insertable = false)
     private Movie movie;
 
 }

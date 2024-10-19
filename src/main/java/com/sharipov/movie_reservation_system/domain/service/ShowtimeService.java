@@ -1,6 +1,7 @@
 package com.sharipov.movie_reservation_system.domain.service;
 
 import com.sharipov.movie_reservation_system.domain.entity.showtime.Showtime;
+import com.sharipov.movie_reservation_system.domain.web.dto.ShowtimeDTO;
 
 import java.util.List;
 
@@ -9,7 +10,9 @@ public interface ShowtimeService {
 
     Showtime getShowtimeById(Long id);
 
-    Showtime create(Showtime showtime);
+    Showtime getShowtimeByMovieId(Long id);
+
+    ShowtimeDTO create(ShowtimeDTO showtimeDTO);
 
     Showtime update(Showtime showtime, Long id);
 
