@@ -23,7 +23,6 @@ public class AuthController {
     @PostMapping("/registration")
     public ProfileDTO registration(@RequestBody ProfileDTO dto) {
         ProfileDTO profileDTO = profileService.create(dto);
-        log.info(profileDTO.toString());
         return ResponseEntity.ok(profileDTO).getBody();
     }
 

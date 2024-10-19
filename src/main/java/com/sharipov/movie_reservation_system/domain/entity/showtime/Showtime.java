@@ -1,6 +1,7 @@
 package com.sharipov.movie_reservation_system.domain.entity.showtime;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.sharipov.movie_reservation_system.domain.entity.movie.Movie;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -17,6 +18,7 @@ public class Showtime {
     private String time;
     private String cinema_hall;
     private Integer capacity;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private LocalDateTime createdAt;
 
     @Column(name = "movie_id")

@@ -51,7 +51,6 @@ public class ProfileServiceImpl implements ProfileService {
 
     @Override
     public ProfileDTO create(ProfileDTO profileDTO) {
-        log.info(profileDTO.toString());
 
         Profile profile = mapper.profileDTOToEntity(profileDTO);
 
@@ -63,6 +62,7 @@ public class ProfileServiceImpl implements ProfileService {
         profile.setRole(Role.ROLE_USER);
         profileRepository.save(profile);
 
+        log.info(profile.toString());
         return mapper.profileEntityToDTO(profile);
     }
 

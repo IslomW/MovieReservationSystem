@@ -32,10 +32,6 @@ public class MovieServiceImpl implements MovieService {
 
     @Override
     public Movie create(Movie movie) {
-//        List<Genre> genres = (List<Genre>) movie.getGenres();
-//        movie.setGenres(null);
-//        movieRepository.save(movie);
-//
         return movieRepository.save(movie);
     }
 

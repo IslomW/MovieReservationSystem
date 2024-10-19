@@ -12,6 +12,7 @@ public class ProfileMapper {
         profile.setName(dto.getName());
         profile.setUsername(dto.getUsername());
         profile.setPassword(dto.getPassword());
+        profile.setRole(dto.getRole());
         return profile;
     }
 
@@ -20,6 +21,7 @@ public class ProfileMapper {
         dto.setName(profile.getName());
         dto.setUsername(profile.getUsername());
         dto.setPassword(profile.getPassword());
+        dto.setRole(profile.getRole());
         return dto;
     }
 }

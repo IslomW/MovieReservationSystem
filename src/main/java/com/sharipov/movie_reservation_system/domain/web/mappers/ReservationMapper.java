@@ -1,7 +1,11 @@
 package com.sharipov.movie_reservation_system.domain.web.mappers;
 
+import com.sharipov.movie_reservation_system.domain.entity.profile.Profile;
 import com.sharipov.movie_reservation_system.domain.entity.reservation.Reservation;
+import com.sharipov.movie_reservation_system.domain.entity.showtime.Showtime;
 import com.sharipov.movie_reservation_system.domain.web.dto.ReservationDTO;
+import com.sharipov.movie_reservation_system.domain.web.dto.ShowtimeDTO;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -9,9 +13,15 @@ import java.util.stream.Collectors;
 
 
 @Component
+@RequiredArgsConstructor
 public class ReservationMapper {
+
+    private final ProfileMapper profileMapper;
+    private final ShowTimeMapper showTimeMapper;
     public static Reservation reservationDTOToEntity(ReservationDTO dto) {
         Reservation reservation = new Reservation();
+        Profile profile = new Profile();
+        Showtime showtime = new Showtime();
         reservation.setSeatNumber(dto.getSeatNumber());
         reservation.setStatus(dto.getStatus());
         reservation.setShowtime(dto.getShowtime());
