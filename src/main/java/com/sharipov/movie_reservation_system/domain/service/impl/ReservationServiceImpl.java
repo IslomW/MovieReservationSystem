@@ -46,11 +46,12 @@ public class ReservationServiceImpl implements ReservationService {
         reservation.setProfileId(reservationDTO.getProfileId());
         reservation.setShowtimeId(reservationDTO.getShowtimeId());
         reservation.setStatus(Status.RESERVED);
-
-
-
         reservationRepository.save(reservation);
-        return mapper.reservationEntityToDTO(reservation);
+        log.info(reservation.toString());
+
+        ReservationDTO response = mapper.reservationEntityToDTO(reservation);
+        log.info(response.toString());
+        return response;
     }
 
     @Override

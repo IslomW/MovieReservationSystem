@@ -17,7 +17,6 @@ public class Reservation {
     private Long id;
     private String seatNumber;
     private LocalDateTime createdAt;
-
     private Status status;
 
     @Column(name = "showtime_id")

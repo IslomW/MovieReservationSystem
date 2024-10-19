@@ -4,6 +4,7 @@ import com.sharipov.movie_reservation_system.domain.service.ProfileService;
 import com.sharipov.movie_reservation_system.domain.web.dto.AuthDTO;
 import com.sharipov.movie_reservation_system.domain.web.dto.ProfileDTO;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("api/v1")
 @RequiredArgsConstructor
+@Slf4j
 public class AuthController {
 
     private final ProfileService profileService;
@@ -21,6 +23,7 @@ public class AuthController {
     @PostMapping("/registration")
     public ProfileDTO registration(@RequestBody ProfileDTO dto) {
         ProfileDTO profileDTO = profileService.create(dto);
+        log.info(profileDTO.toString());
         return ResponseEntity.ok(profileDTO).getBody();
     }
 
