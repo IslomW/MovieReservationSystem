@@ -86,9 +86,9 @@ public class ProfileServiceImpl implements ProfileService {
 
                 return response;
             }
-            throw new UsernameNotFoundException("Phone or password wrong.");
+            throw new UsernameNotFoundException("Username or password wrong.");
         } catch (BadCredentialsException e) {
-            throw new UsernameNotFoundException("Phone or password wrong.");
+            throw new UsernameNotFoundException("Username or password wrong.");
         }
 
 
