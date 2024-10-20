@@ -34,7 +34,7 @@ public class ReservationServiceImpl implements ReservationService {
     @Override
     public ReservationDTO getReservationById(Long id) {
         Reservation reservation = reservationRepository.findById(id)
-                .orElseThrow(()-> new ResourceNotFoundException("Reservation not found."));
+                .orElseThrow(() -> new ResourceNotFoundException("Reservation not found."));
         return mapper.reservationEntityToDTO(reservation);
     }
 
@@ -56,11 +56,12 @@ public class ReservationServiceImpl implements ReservationService {
 
     @Override
     public ReservationDTO update(ReservationDTO reservationDTO, Long id) {
-
-
-        /// USerId
-
-        return null;
+        Reservation reservation = reservationRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Reservation not found"));
+        reservation.setShowtime(reservationDTO.getShowtime());
+        reservation.setSeatNumber(reservationDTO.getSeatNumber());
+        reservationRepository.save(reservation);
+        return ReservationMapper.reservationEntityToDTO(reservation);
     }
 
     @Override

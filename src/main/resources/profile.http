@@ -1,8 +1,10 @@
 ###Get all profiles
 GET localhost:8080/api/v1/profile
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiYmFsdHVuMDAiLCJzdWIiOiJiYWx0dW4wMCIsImlhdCI6MTcyOTQwNzA0MCwiZXhwIjoxNzI5NDkzNDQwfQ.NX6cOPrqNvOp5U8VkT4qR2gVB50cAhRVekvE6Gh9LOd9xL_X5pdQ0HNC_Uu5vSOuE8cHWL5MAiU8nRPmAIDPwA
 
 ###Get Profile By Id
-GET localhost:8080/api/v1/profile/1
+GET localhost:8080/api/v1/profile/2
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiUk9MRV9VU0VSIiwidXNlcm5hbWUiOiJ0YXdrZW5zaXkwIiwic3ViIjoidGF3a2Vuc2l5MCIsImlhdCI6MTcyOTQwNDE2NSwiZXhwIjoxNzI5NDkwNTY1fQ.7VnFFBs5cDpVwSW5m9wpeb_AvjZqjuucY1BaVyow9Xg5Ef95KrE3fa66ruWWNtWkMrwe4EMhu4BYQU_yXwo_Qg
 
 
 ###Registration new User
@@ -22,5 +24,14 @@ Content-Type: application/json
 
 {
   "username": "tawkensiy0",
+  "password": "12345"
+}
+
+###Autherization ADMIN
+POST localhost:8080/api/v1/authorization
+Content-Type: application/json
+
+{
+  "username": "baltun00",
   "password": "12345"
 }

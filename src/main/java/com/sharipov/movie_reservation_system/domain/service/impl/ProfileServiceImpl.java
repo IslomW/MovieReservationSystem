@@ -44,6 +44,7 @@ public class ProfileServiceImpl implements ProfileService {
 
     @Override
     public Profile getProfileById(Long id) {
+        log.info(id.toString());
         Profile profile = profileRepository.findById(id).orElseThrow(
                 () -> new ResourceNotFoundException("User Not Found"));
         return profile;

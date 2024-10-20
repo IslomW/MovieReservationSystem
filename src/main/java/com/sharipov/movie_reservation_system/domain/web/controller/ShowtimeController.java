@@ -10,6 +10,7 @@ import com.sharipov.movie_reservation_system.domain.web.mappers.ShowTimeMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -37,6 +38,7 @@ public class ShowtimeController {
     }
 
     @PostMapping()
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ShowtimeDTO createShowtime(@RequestBody ShowtimeDTO showtimeDTO) {
 
         ShowtimeDTO dto = showtimeService.create(showtimeDTO);
@@ -45,6 +47,7 @@ public class ShowtimeController {
 
 
     @DeleteMapping
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public void deleteShowtime(Long id) {
         showtimeService.delete(id);
     }

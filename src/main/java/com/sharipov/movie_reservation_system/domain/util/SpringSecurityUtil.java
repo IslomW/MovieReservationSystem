@@ -7,7 +7,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 public class SpringSecurityUtil {
 
 
-    public Long getCurrentUserId() {
+    public static Long getCurrentUserId() {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 

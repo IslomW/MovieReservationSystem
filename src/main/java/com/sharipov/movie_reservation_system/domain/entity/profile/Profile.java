@@ -23,4 +23,5 @@ public class Profile {
     private Role role;
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private GeneralStatus status;
+
 }
