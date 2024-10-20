@@ -3,6 +3,15 @@
 This is the Movie Reservation System API that allows users to book movie tickets. It provides endpoints for managing
 movies, profiles, reservations, and showtime.
 
+## Technologies Used
+- Java 17
+- Spring Boot
+- PostgreSQL
+- Spring Data JPA
+- Spring Security
+- JSON Web Tokens (JWT)
+- Jakarta Validation API
+- Swagger API Documentation
 
 ## Sequence diagram
 <img src="docs/sequence.png" width="500">
@@ -75,16 +84,6 @@ movies, profiles, reservations, and showtime.
 5. Run the application:
    ```bash
    mvn spring-boot:run
-
-## Technologies Used
-- Java 17
-- Spring Boot
-- PostgreSQL
-- Spring Data JPA
-- Spring Security
-- JSON Web Tokens (JWT)
-- Jakarta Validation API
-- Swagger API Documentation
 
 Notes
 All operations on movies, showtimes, and profiles that modify data (POST, PUT, DELETE) are restricted to admins only.
