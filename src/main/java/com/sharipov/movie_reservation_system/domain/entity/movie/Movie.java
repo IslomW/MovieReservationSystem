@@ -1,6 +1,7 @@
 package com.sharipov.movie_reservation_system.domain.entity.movie;
 
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -10,6 +11,7 @@ import java.util.Set;
 @Data
 @Entity
 @Table(name = "movies")
+@Schema(hidden = true)
 public class Movie {
 
     @Id

@@ -2,6 +2,7 @@ package com.sharipov.movie_reservation_system.domain.entity.reservation;
 
 import com.sharipov.movie_reservation_system.domain.entity.profile.Profile;
 import com.sharipov.movie_reservation_system.domain.entity.showtime.Showtime;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -10,6 +11,7 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
+@Schema(hidden = true)
 public class Reservation {
 
     @Id

@@ -3,6 +3,7 @@ package com.sharipov.movie_reservation_system.domain.entity.showtime;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.sharipov.movie_reservation_system.domain.entity.movie.Movie;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -10,6 +11,7 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
+@Schema(hidden = true)
 public class Showtime {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
