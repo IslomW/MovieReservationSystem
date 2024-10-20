@@ -61,5 +61,5 @@ Notes
 All operations on movies, showtimes, and profiles that modify data (POST, PUT, DELETE) are restricted to admins only.
 Authentication is required to access the API endpoints. Use the /api/v1/authorization endpoint to obtain a token.
 
-### TASK
+### Projet URL
 https://roadmap.sh/projects/movie-reservation-system
