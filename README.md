@@ -60,3 +60,6 @@ http://localhost:8080/swagger-ui/index.html
 Notes
 All operations on movies, showtimes, and profiles that modify data (POST, PUT, DELETE) are restricted to admins only.
 Authentication is required to access the API endpoints. Use the /api/v1/authorization endpoint to obtain a token.
+
+### TASK
+https://roadmap.sh/projects/movie-reservation-system
