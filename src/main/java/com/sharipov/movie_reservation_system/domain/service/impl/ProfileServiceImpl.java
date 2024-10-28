@@ -1,12 +1,14 @@
 package com.sharipov.movie_reservation_system.domain.service.impl;
 
 import com.sharipov.movie_reservation_system.domain.config.CustomUserDetails;
+import com.sharipov.movie_reservation_system.domain.config.MailType;
 import com.sharipov.movie_reservation_system.domain.entity.profile.GeneralStatus;
 import com.sharipov.movie_reservation_system.domain.entity.profile.Profile;
 import com.sharipov.movie_reservation_system.domain.entity.profile.Role;
 import com.sharipov.movie_reservation_system.domain.exception.BadAppRequestException;
 import com.sharipov.movie_reservation_system.domain.exception.ResourceNotFoundException;
 import com.sharipov.movie_reservation_system.domain.repository.ProfileRepository;
+import com.sharipov.movie_reservation_system.domain.service.MailService;
 import com.sharipov.movie_reservation_system.domain.service.ProfileService;
 import com.sharipov.movie_reservation_system.domain.util.JwtUtil;
 import com.sharipov.movie_reservation_system.domain.web.dto.AuthDTO;
@@ -24,6 +26,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Properties;
 
 @Service
 @RequiredArgsConstructor
@@ -33,6 +36,7 @@ public class ProfileServiceImpl implements ProfileService {
     private final ProfileMapper mapper;
     private final PasswordEncoder encoder;
     private final AuthenticationManager authenticationManager;
+    private final MailService mailService;
 
     private final ProfileRepository profileRepository;
 
@@ -62,6 +66,8 @@ public class ProfileServiceImpl implements ProfileService {
         profile.setStatus(GeneralStatus.ACTIVE);
         profile.setRole(Role.ROLE_USER);
         profileRepository.save(profile);
+
+        mailService.sendEmail(profile, MailType.REGISTRATION, new Properties());
 
         log.info(profile.toString());
         return mapper.profileEntityToDTO(profile);
