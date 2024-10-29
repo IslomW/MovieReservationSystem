@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Добро пожаловать в наш сервис</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .email-container {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    .header {
+      background-color: #4CAF50;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .content {
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .content h2 {
+      color: #4CAF50;
+    }
+    .content p {
+      margin: 10px 0;
+    }
+    .content ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .content li {
+      margin: 5px 0;
+    }
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 20px 0;
+      background-color: #4CAF50;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 5px;
+      text-align: center;
+    }
+    .footer {
+      text-align: center;
+      padding: 10px;
+      font-size: 12px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+<div class="email-container">
+  <div class="header">Welcome to our service!</div>
+
+  <div class="content">
+    <h2>Hello, ${name}!</h2>
+
+    <p>Thank you for registering. We are glad that you have joined our community!</p>
+
+    <p>Your login details:</p>
+    <ul>
+      <li><strong>Email:</strong> ${email}</li>
+      <li><strong>Date of registration:</strong> ${registrationDate}</li>
+    </ul>
+
+    <p>To activate your account, please follow the link below:</p>
+    <p><a href="${activationLink}" class="button">Activate account</a></p>
+  </div>
+
+  <div class="footer">
+    © 2024 Movie Reservation System. All rights reserved.
+  </div>
+</div>
+</body>
+</html>

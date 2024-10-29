@@ -30,14 +30,41 @@
 </head>
 
 <body>
-<div id="body">
-    <div id="div">
-        <h1>Registration</h1>
-        <p>Hello, ${name}!</p>
-        <p>This is registration mail. You can log in and use task list app.</p>
-        <p>With best regards, <br> Sharipov Islombek</p>
+
+<div class="email-container">
+    <div class="email-container">
+        <div class="header">Welcome to our service!</div>
+
+        <div class="content">
+            <h2>Hello, ${name}!</h2>
+
+            <p>Thank you for registering. We are glad that you have joined our community!</p>
+
+            <p>Your login details:</p>
+            <ul>
+                <li><strong>Email:</strong> ${email}</li>
+                <li><strong>Date of registration:</strong> ${registrationDate}</li>
+            </ul>
+
+            <p>To activate your account, please follow the link below:</p>
+            <p><a href="${activationLink}" class="button">Activate account</a></p>
+        </div>
+
+        <div class="footer">
+            © 2024 Movie Reservation System. All rights reserved.
+        </div>
     </div>
 </div>
+
+
+<#--<div id="body">-->
+<#--    <div id="div">-->
+<#--        <h1>Registration</h1>-->
+<#--        <p>Hello, ${name}!</p>-->
+<#--        <p>This is registration mail. You can log in and use Movie Reservation app.</p>-->
+<#--        <p>With best regards, <br> Sharipov Islombek</p>-->
+<#--    </div>-->
+<#--</div>-->
 </body>
 
 </html>
