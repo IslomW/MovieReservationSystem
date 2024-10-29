@@ -1,5 +1,9 @@
 # Movie Reservation System API
 
+
+## Diagram
+<img src="docs/diagram.png" width="800">
+
 This is the Movie Reservation System API that allows users to book movie tickets. It provides endpoints for managing
 movies, profiles, reservations, and showtime.
 
@@ -7,6 +11,8 @@ movies, profiles, reservations, and showtime.
 - Java 17
 - Spring Boot
 - PostgreSQL
+- Redis
+- Spring MailSender (SMTP)
 - Spring Data JPA
 - Spring Security
 - JSON Web Tokens (JWT)
