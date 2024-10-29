@@ -103,6 +103,7 @@ public class SpringConfig {
         httpSecurity.authorizeHttpRequests(authorizationManagerRequestMatcherRegistry -> {
             authorizationManagerRequestMatcherRegistry
                     .requestMatchers("/api/v1/registration","api/v1/authorization").permitAll()
+                    .requestMatchers("/api/v1/movie/image").permitAll()
                     .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
                     .anyRequest()
                     .authenticated();

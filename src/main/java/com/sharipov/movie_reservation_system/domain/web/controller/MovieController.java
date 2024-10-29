@@ -1,8 +1,8 @@
 package com.sharipov.movie_reservation_system.domain.web.controller;
 
 import com.sharipov.movie_reservation_system.domain.entity.movie.Movie;
+import com.sharipov.movie_reservation_system.domain.service.ImageService;
 import com.sharipov.movie_reservation_system.domain.service.MovieService;
-import com.sharipov.movie_reservation_system.domain.service.S3Service;
 import com.sharipov.movie_reservation_system.domain.web.dto.MovieDTO;
 import com.sharipov.movie_reservation_system.domain.web.mappers.MovieMapper;
 import io.swagger.v3.oas.annotations.Operation;
@@ -14,20 +14,18 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.util.ArrayList;
+import java.io.IOException;
 import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/movie")
 @RequiredArgsConstructor
-@Slf4j
 @Tag(
         name = "Movie Controller",
         description = "Movie API"
 )
 public class MovieController {
 
-    private final S3Service service;
 
     private final MovieService movieService;
     private final MovieMapper mapper;
@@ -52,9 +50,8 @@ public class MovieController {
     @PostMapping
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @Operation(summary = "Create movie.(Only Admins)")
-    public ResponseEntity<MovieDTO> create(@RequestBody MovieDTO movieDTO, @RequestParam(value = "file") MultipartFile file) {
-        String imageUrl = service.uploadImage(file);
-        log.info(imageUrl);
+    public ResponseEntity<MovieDTO> create(@RequestBody MovieDTO movieDTO) {
+
         Movie movie = MovieMapper.movieDTOToEntity(movieDTO);
         movieService.create(movie);
         MovieDTO dto = MovieMapper.movieEntityToDTO(movie);
@@ -77,6 +74,13 @@ public class MovieController {
     public ResponseEntity<Void> delete(@PathVariable("id") Long id) {
         movieService.deleteById(id);
         return ResponseEntity.ok().build();
+    }
+
+
+    @PostMapping("/{id}/image")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public void uploadImage(@RequestParam("file") MultipartFile multipartFile, @PathVariable("id") Long id) throws IOException {
+        movieService.uploadImage(id,multipartFile);
     }
 
 }

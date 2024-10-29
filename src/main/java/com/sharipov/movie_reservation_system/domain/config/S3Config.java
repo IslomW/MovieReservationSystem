@@ -18,7 +18,6 @@ public class S3Config {
 
     @Bean
     public S3Client s3Client() {
-        log.info(configProperties.toString());
         AwsBasicCredentials awsBasicCredentials = AwsBasicCredentials.create(configProperties.getAccessKey(), configProperties.getSecretKey());
         return S3Client.builder()
                 .region(Region.of(configProperties.getRegion()))
