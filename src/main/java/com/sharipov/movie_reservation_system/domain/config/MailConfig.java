@@ -1,17 +1,18 @@
 package com.sharipov.movie_reservation_system.domain.config;
 
-import com.sharipov.movie_reservation_system.domain.service.props.MailProperties;
+import com.sharipov.movie_reservation_system.domain.config.props.MailProperties;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 
-import java.util.Properties;
 
 @Configuration
 @RequiredArgsConstructor
+@Slf4j
 public class MailConfig {
 
 
@@ -19,6 +20,7 @@ public class MailConfig {
 
     @Bean
     public JavaMailSender mailSender(){
+        log.info(mailProperties.toString());
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
         mailSender.setHost(mailProperties.getHost());
         mailSender.setPort(mailProperties.getPort());

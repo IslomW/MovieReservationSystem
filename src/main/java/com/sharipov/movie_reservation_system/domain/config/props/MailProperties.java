@@ -1,4 +1,4 @@
-package com.sharipov.movie_reservation_system.domain.service.props;
+package com.sharipov.movie_reservation_system.domain.config.props;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

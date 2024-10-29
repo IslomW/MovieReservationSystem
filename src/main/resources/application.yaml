@@ -25,7 +25,7 @@ spring:
 
   aws:
     s3:
-      bucket-name: arn:aws:s3:::sharipov
-      region: US East (Ohio) us-east-2
+      bucket-name: sharipovi
+      region: us-east-2
       access-key: AKIA2YJH2KGCN7ZUD6LV
       secret-key: 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
